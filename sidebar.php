@@ -1,10 +1,11 @@
 <aside class="sidebar">
-      <?php
+      <section class="widget">
+        <?php
         if ( function_exists('dynamic_sidebar') ){
             dynamic_sidebar('right-sidebar');
         }
         ?>
-        
+        </section>
       <!--<section class="widget">
         <h3 class="widget-title">About</h3>
         <div class="textwidget">

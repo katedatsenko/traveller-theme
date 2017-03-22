@@ -191,7 +191,8 @@ aside .widget{
   margin-bottom: 80px;
 }
 
-aside h3.widget-title{
+aside h3.widget-title,  
+aside h1{
   width: 240px;
   padding: 17px 20px;
   border-left: 3px #2e2d3e solid;
@@ -204,8 +205,10 @@ aside h3.widget-title{
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
-aside .textwidget p{
+aside li {
+  list-style: none;
+}
+aside p, a{
   width: 240px;
   padding: 0 20px;
   font-family: 'LatoRegular', 'Helvetica', arial;
@@ -213,8 +216,11 @@ aside .textwidget p{
   color: #737373;
   margin-bottom: 10px;
   line-height: 20px;
+  
 }
-
+.widget>li>ul>li {
+  padding: 0 20px;
+}
 .search_widget .search-field{
   width: 240px;
   height: 50px;
