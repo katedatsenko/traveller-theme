@@ -41,6 +41,7 @@ header img.h_logo{
 .wrapper div .header_title, #header_href{
   color: #2e2d3e;
   margin: 0 auto;
+  padding-top: 10px;
   position: absolute;
 }
 

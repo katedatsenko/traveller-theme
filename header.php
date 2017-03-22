@@ -13,7 +13,7 @@
 
 	<header>
 		<div class="wrapper">
-			<h1><a id="header_href" href="<?php echo get_home_url(); ?>">TRAVELLER</a></h1>
+			<h1><a id="header_href" href="<?php echo get_home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php
                 		$args = array(
 		                    'theme_location' => 'primary',        // (string) Расположение меню в шаблоне. (указывается ключ которым было зарегистрировано меню в функции register_nav_menus)

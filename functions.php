@@ -121,3 +121,96 @@ add_action( 'widgets_init', 'true_remove_default_widget', 20 );
 
 require get_template_directory().'/widgets/TravellerExampleWidget.php';
 add_action('widgets_init', create_function('', 'return register_widget("widgets\TravellerExampleWidget");')); 
+
+add_action('customize_register','my_customize_register');
+function my_customize_register( $wp_customize ) {
+
+
+
+    // Section
+    $wp_customize->add_section('traveller_my_section', array(
+        'title' => __('My section title', TRAVELLER_THEME_TEXTDOMAIN),
+        'priority' => 30,
+        'description' => __('My section description', TRAVELLER_THEME_TEXTDOMAIN),
+    ));
+    // Setting
+    $wp_customize->add_setting("traveller_my_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+    // Control
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        "traveller_my_settings",
+        array(
+            "label" => __("Title", TRAVELLER_THEME_TEXTDOMAIN),
+            "section" => "traveller_my_section",
+            "settings" => "traveller_my_settings",
+            "type" => "textarea",
+        )
+    ));
+    // Setting
+    $wp_customize->add_setting("traveller_my_test_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+    // Control
+    $wp_customize->add_control( 'traveller_my_test_settings', array(
+        'label'       => __("Label", TRAVELLER_THEME_TEXTDOMAIN),
+        'section'     => 'traveller_my_section',
+        'type'        => 'input',
+        'description' =>  __("Description", TRAVELLER_THEME_TEXTDOMAIN)
+    ) );
+    // Setting
+    $wp_customize->add_setting("traveller_my_img_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+    // Control
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'traveller_my_img_settings',
+            array(
+                'label'      => __( 'Upload a logo', TRAVELLER_THEME_TEXTDOMAIN),
+                'section'    => 'traveller_my_section',
+                'settings'   => 'traveller_my_img_settings',
+                //'context'    => 'your_setting_context'
+            )
+        )
+    );
+    // Setting
+    $wp_customize->add_setting("traveller_my_upload_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+    // Control
+    $wp_customize->add_control(
+        new WP_Customize_Upload_Control(
+            $wp_customize,
+            'traveller_my_upload_settings',
+            array(
+                'label'      => __( 'Upload', TRAVELLER_THEME_TEXTDOMAIN),
+                'section'    => 'traveller_my_section',
+                'settings'   => 'traveller_my_upload_settings'
+            )
+        )
+    );
+    // Setting
+    $wp_customize->add_setting("traveller_my_color_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+    // Control
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'traveller_my_color_settings',
+            array(
+                'label'      => __( 'Color', TRAVELLER_THEME_TEXTDOMAIN),
+                'section'    => 'traveller_my_section',
+                'settings'   => 'traveller_my_color_settings'
+            )
+        )
+    );
+}
