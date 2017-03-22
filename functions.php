@@ -111,3 +111,10 @@ function register_my_widgets(){
     ) );
 }
 add_action( 'widgets_init', 'register_my_widgets' );
+
+function true_remove_default_widget() {
+    unregister_widget('WP_Widget_Archives'); // Архивы
+    unregister_widget('WP_Widget_Calendar'); // Календарь
+    
+}
+add_action( 'widgets_init', 'true_remove_default_widget', 20 );

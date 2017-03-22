@@ -1,5 +1,11 @@
 <aside class="sidebar">
-      <section class="widget">
+      <?php
+        if ( function_exists('dynamic_sidebar') ){
+            dynamic_sidebar('right-sidebar');
+        }
+        ?>
+        
+      <!--<section class="widget">
         <h3 class="widget-title">About</h3>
         <div class="textwidget">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -12,5 +18,5 @@
         <form class="search_widget">
           <input type="text" id="search-field" class="search-field" placeholder="What are you looking for?"/>
         </form>
-      </section>
+      </section>-->
 </aside><!-- aside(sidebar) End -->
