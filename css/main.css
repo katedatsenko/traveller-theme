@@ -34,7 +34,7 @@ header{
 header img.h_logo{
   display: block;
   float: left;
-  margin-top: 49px;
+  margin-top: 5px;
   width: 100%;
 }
 
@@ -154,7 +154,7 @@ header img.h_logo{
 }
 
 .main2{
-  padding-top: 80px;
+  padding-top: 10px;
   position: relative;
   border-left: 1px #e1e0e0 solid;
   border-right: 1px #e1e0e0 solid;
@@ -312,4 +312,48 @@ div .categories>span{
 }
 div .categories {
     margin-bottom: 20px;
+}
+header nav{
+  float: right;
+}
+
+#main-menu ul{  
+  font-family: 'LatoBold', 'Helvetica', arial;
+  margin-right: -1px;
+  font-weight: bold;
+}
+
+#main-menu ul li{
+  float: left;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+#main-menu ul li a{
+  display: block;
+  width: 130px;
+  height: 30px;
+  padding-top: 15px;
+  border-right: 1px #2e2d3e solid;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  color: #2e2d3e;
+}
+
+#main-menu ul li:first-child a{
+  border-left: 1px #2e2d3e solid; 
+}
+
+#main-menu ul li.current a{
+  color: #58c93a;
+  box-shadow: 0 4px 0 #58c93a; 
+}
+
+#main-menu ul li a:hover{
+  background: #4f4e4e;
+  color: #f8f8f8;
+
 }
