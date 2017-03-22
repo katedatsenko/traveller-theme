@@ -48,3 +48,45 @@ add_theme_support( 'post-formats', array( 'aside', 'gallery' ) );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+
+add_action('admin_menu', 'addAdminMenu');
+function addAdminMenu(){
+    $mainMenuPage = add_menu_page(
+        _x(
+            'Traveller theme',
+            'admin menu page' ,
+            TRAVELLER_THEME_TEXTDOMAIN
+        ),
+        _x(
+            'Traveller theme',
+            'admin menu page' ,
+            TRAVELLER_THEME_TEXTDOMAIN
+        ),
+        'manage_options',
+        TRAVELLER_THEME_TEXTDOMAIN,
+        'renderMainMenu',
+        get_template_directory_uri() .'/img/main-menu.png'
+    );
+    $subMenuPage = add_submenu_page(
+        TRAVELLER_THEME_TEXTDOMAIN,
+        _x(
+            'Sub Traveller theme',
+            'admin menu page' ,
+            TRAVELLER_THEME_TEXTDOMAIN
+        ),
+        _x(
+            'Sub Traveller theme',
+            'admin menu page' ,
+            TRAVELLER_THEME_TEXTDOMAIN
+        ),
+        'manage_options',
+        'traveller_theme_control_sub_menu',
+        'renderSubMenu'
+        );
+}
+function renderMainMenu(){
+    _e('Traveller theme page', TRAVELLER_THEME_TEXTDOMAIN);
+}
+function renderSubMenu(){
+    _e('Sub Traveller theme page', TRAVELLER_THEME_TEXTDOMAIN);
+}
